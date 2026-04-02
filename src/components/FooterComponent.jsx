@@ -1,126 +1,145 @@
+import { useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import {
+  FaDownload,
   FaFacebook,
-  FaTiktok,
   FaInstagram,
+  FaTiktok,
   FaWhatsapp,
-  FaArrowRight,
 } from "react-icons/fa";
+import DownloadModal from "./DownloadModal";
+import { DOWNLOAD_PAGE_PATH } from "../constants/appLinks";
 import "./FooterComponent.css";
 
 const FooterComponent = () => {
+  const [downloadModalOpen, setDownloadModalOpen] = useState(false);
+
   return (
-    <footer className="ng-footer">
-      <Container>
-        <div className="ng-footer__top">
-          <Row className="g-4 align-items-start">
-            <Col lg={4} md={6}>
-              <div className="ng-footer__brand">
-                <div className="ng-footer__brand-badge">NaijaGo</div>
-                <h3>Your gateway to smarter Nigerian commerce.</h3>
-                <p>
-                  Discover trusted vendors, quality products, and a cleaner
-                  digital marketplace experience built for modern buyers and
-                  sellers.
-                </p>
+    <>
+      <footer className="ng-footer">
+        <Container>
+          <div className="ng-footer__top">
+            <Row className="g-4 align-items-start">
+              <Col lg={4} md={6}>
+                <div className="ng-footer__brand">
+                  <div className="ng-footer__brand-badge">NaijaGo</div>
+                  <h3>Your gateway to smarter Nigerian commerce.</h3>
+                  <p>
+                    Discover trusted vendors, quality products, and a cleaner
+                    digital marketplace experience built for modern buyers and
+                    sellers.
+                  </p>
 
-                <button className="ng-footer__cta">
-                  Explore Marketplace <FaArrowRight className="ms-2" />
-                </button>
-              </div>
-            </Col>
-
-            <Col lg={2} md={6}>
-              <div className="ng-footer__group">
-                <h5>Quick Links</h5>
-                <ul>
-                  <li>
-                    <Link to="/">Home</Link>
-                  </li>
-                  <li>
-                    <Link to="/about">About Us</Link>
-                  </li>
-                  <li>
-                    <Link to="/contact">Contact Us</Link>
-                  </li>
-                </ul>
-              </div>
-            </Col>
-
-            <Col lg={2} md={6}>
-              <div className="ng-footer__group">
-                <h5>Legal</h5>
-                <ul>
-                  <li>
-                    <Link to="/policies">Policies</Link>
-                  </li>
-                  <li>
-                    <Link to="/privacy">Privacy & Terms</Link>
-                  </li>
-                </ul>
-              </div>
-            </Col>
-
-            <Col lg={4} md={6}>
-              <div className="ng-footer__group">
-                <h5>Stay Connected</h5>
-                <p className="ng-footer__small">
-                  Follow NaijaGo across our social platforms and stay updated on
-                  marketplace news, offers, and community growth.
-                </p>
-
-                <div className="ng-footer__socials">
-                  <a
-                    href="https://www.facebook.com/share/17fBpxLKKk/"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="ng-social-link"
-                    aria-label="Facebook"
+                  <button
+                    className="ng-footer__cta"
+                    onClick={() => setDownloadModalOpen(true)}
                   >
-                    <FaFacebook />
-                  </a>
-
-                  <a
-                    href="https://www.tiktok.com/@naijago.app?_r=1&_t=ZS-91TNqv2Q0M3"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="ng-social-link"
-                    aria-label="TikTok"
-                  >
-                    <FaTiktok />
-                  </a>
-
-                  <a
-                    href="https://www.instagram.com/naijagoappltd?igsh=MXRueGl1djcyYzU3bQ=="
-                    target="_blank"
-                    rel="noreferrer"
-                    className="ng-social-link"
-                    aria-label="Instagram"
-                  >
-                    <FaInstagram />
-                  </a>
-
-                  <a
-                    href="https://wa.me/2348084431251"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="ng-social-link"
-                    aria-label="WhatsApp"
-                  >
-                    <FaWhatsapp />
-                  </a>
+                    <FaDownload className="me-2" />
+                    Get the App
+                  </button>
                 </div>
-              </div>
-            </Col>
-          </Row>
-        </div>
+              </Col>
 
-        <div className="ng-footer__bottom">
-          <p>© {new Date().getFullYear()} NaijaGo. All Rights Reserved.</p>
-        </div>
-      </Container>
-    </footer>
+              <Col lg={2} md={6}>
+                <div className="ng-footer__group">
+                  <h5>Quick Links</h5>
+                  <ul>
+                    <li>
+                      <Link to="/">Home</Link>
+                    </li>
+                    <li>
+                      <Link to="/about">About Us</Link>
+                    </li>
+                    <li>
+                      <Link to="/contact">Contact Us</Link>
+                    </li>
+                    <li>
+                      <Link to={DOWNLOAD_PAGE_PATH}>Download App</Link>
+                    </li>
+                  </ul>
+                </div>
+              </Col>
+
+              <Col lg={2} md={6}>
+                <div className="ng-footer__group">
+                  <h5>Legal</h5>
+                  <ul>
+                    <li>
+                      <Link to="/policies">Policies</Link>
+                    </li>
+                    <li>
+                      <Link to="/privacy">Privacy & Terms</Link>
+                    </li>
+                  </ul>
+                </div>
+              </Col>
+
+              <Col lg={4} md={6}>
+                <div className="ng-footer__group">
+                  <h5>Stay Connected</h5>
+                  <p className="ng-footer__small">
+                    Follow NaijaGo across our social platforms and stay updated on
+                    marketplace news, offers, and community growth.
+                  </p>
+
+                  <div className="ng-footer__socials">
+                    <a
+                      href="https://www.facebook.com/share/16kunbUn6v/?mibextid=wwXIfr"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="ng-social-link"
+                      aria-label="Facebook"
+                    >
+                      <FaFacebook />
+                    </a>
+
+                    <a
+                      href="https://www.tiktok.com/@naijago.app?_r=1&_t=ZS-91TNqv2Q0M3"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="ng-social-link"
+                      aria-label="TikTok"
+                    >
+                      <FaTiktok />
+                    </a>
+
+                    <a
+                      href="https://www.instagram.com/naijago_app?igsh=MXRueGl1djcyYzU3bQ%3D%3D&utm_source=qr"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="ng-social-link"
+                      aria-label="Instagram"
+                    >
+                      <FaInstagram />
+                    </a>
+
+                    <a
+                      href="https://wa.me/2348084431251"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="ng-social-link"
+                      aria-label="WhatsApp"
+                    >
+                      <FaWhatsapp />
+                    </a>
+                  </div>
+                </div>
+              </Col>
+            </Row>
+          </div>
+
+          <div className="ng-footer__bottom">
+            <p>© {new Date().getFullYear()} NaijaGo. All Rights Reserved.</p>
+          </div>
+        </Container>
+      </footer>
+
+      <DownloadModal
+        isOpen={downloadModalOpen}
+        onClose={() => setDownloadModalOpen(false)}
+      />
+    </>
   );
 };
 

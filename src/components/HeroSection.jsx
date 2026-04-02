@@ -1,6 +1,5 @@
 import { Button, Container, Form } from "react-bootstrap";
 import {
-  FaArrowRight,
   FaMobileAlt,
   FaSearch,
   FaShieldAlt,
@@ -9,6 +8,13 @@ import {
   FaTags,
   FaTruck,
 } from "react-icons/fa";
+import {
+  APP_STORE_BADGE_SRC,
+  APP_STORE_URL,
+  PLAY_STORE_BADGE_SRC,
+  PLAY_STORE_URL,
+} from "../constants/appLinks";
+import StoreBadgeLink from "./StoreBadgeLink";
 import "./HeroSection.css";
 
 const categories = [
@@ -126,14 +132,24 @@ const HeroSection = () => {
             </div>
 
             <div className="hero-v2__actions">
-              <Button className="hero-v2__primary-btn">
-                Start Shopping <FaArrowRight className="ms-2" />
-              </Button>
+              <StoreBadgeLink
+                href={PLAY_STORE_URL}
+                src={PLAY_STORE_BADGE_SRC}
+                alt="Get it on Google Play"
+                className="hero-v2__store-badge"
+              />
 
-              <Button variant="link" className="hero-v2__secondary-btn">
-                Become a Vendor
-              </Button>
+              <StoreBadgeLink
+                href={APP_STORE_URL}
+                src={APP_STORE_BADGE_SRC}
+                alt="Download on the App Store"
+                className="hero-v2__store-badge"
+              />
             </div>
+
+            <p className="hero-v2__download-note">
+              Download the app to sign in, shop, or register as a vendor.
+            </p>
           </div>
 
           <div className="hero-v2__right">

@@ -1,0 +1,28 @@
+.store-badge-link {
+  display: inline-flex;
+  align-items: center;
+  transition: transform 0.22s ease, opacity 0.22s ease;
+}
+
+.store-badge-link:hover {
+  transform: translateY(-2px);
+  opacity: 0.96;
+}
+
+.store-badge-link__image {
+  display: block;
+  height: 58px;
+  width: auto;
+}
+
+@media (max-width: 575px) {
+  .store-badge-link {
+    width: 100%;
+  }
+
+  .store-badge-link__image {
+    height: auto;
+    width: 100%;
+    max-width: 220px;
+  }
+}

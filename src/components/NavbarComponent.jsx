@@ -1,22 +1,31 @@
 import { useState } from "react";
 import { Container } from "react-bootstrap";
-import { FaBars, FaSearch, FaTimes, FaUserCircle } from "react-icons/fa";
+import { FaBars, FaDownload, FaMobileAlt, FaTimes } from "react-icons/fa";
 import { Link, useLocation } from "react-router-dom";
+import { DOWNLOAD_PAGE_PATH } from "../constants/appLinks";
+import DownloadModal from "./DownloadModal";
 import "./NavbarComponent.css";
 
 const navLinks = [
   { label: "Home", path: "/" },
   { label: "About", path: "/about" },
   { label: "Contact", path: "/contact" },
+  { label: "Download App", path: DOWNLOAD_PAGE_PATH },
   { label: "Policies", path: "/policies" },
   { label: "Privacy", path: "/privacy" },
 ];
 
 const NavbarComponent = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [downloadModalOpen, setDownloadModalOpen] = useState(false);
   const location = useLocation();
 
   const closeMenu = () => setMenuOpen(false);
+  const openDownloadModal = () => {
+    setMenuOpen(false);
+    setDownloadModalOpen(true);
+  };
+  const closeDownloadModal = () => setDownloadModalOpen(false);
 
   return (
     <>
@@ -49,13 +58,14 @@ const NavbarComponent = () => {
             </nav>
 
             <div className="ng-navbar-actions">
-              <button className="ng-icon-btn" aria-label="Search">
-                <FaSearch />
-              </button>
+              <Link to={DOWNLOAD_PAGE_PATH} className="ng-download-shortcut">
+                <FaMobileAlt className="me-2" />
+                Download Page
+              </Link>
 
-              <button className="ng-signin-btn">
-                <FaUserCircle className="me-2" />
-                Sign In
+              <button className="ng-download-btn" onClick={openDownloadModal}>
+                <FaDownload className="me-2" />
+                Get the App
               </button>
 
               <button
@@ -94,12 +104,26 @@ const NavbarComponent = () => {
             ))}
           </div>
 
-          <button className="ng-mobile-signin-btn">
-            <FaUserCircle className="me-2" />
-            Sign In
+          <div className="ng-mobile-download-note">
+            Sign in and vendor registration happen inside the NaijaGo app.
+          </div>
+
+          <Link
+            to={DOWNLOAD_PAGE_PATH}
+            className="ng-mobile-download-link"
+            onClick={closeMenu}
+          >
+            Open the download page
+          </Link>
+
+          <button className="ng-mobile-download-btn" onClick={openDownloadModal}>
+            <FaDownload className="me-2" />
+            Get the App
           </button>
         </div>
       </div>
+
+      <DownloadModal isOpen={downloadModalOpen} onClose={closeDownloadModal} />
     </>
   );
 };

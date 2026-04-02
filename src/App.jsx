@@ -4,10 +4,12 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import NavbarComponent from './components/NavbarComponent';
 import HeroSection from './components/HeroSection';
 import CategorySection from "./components/CategorySection";
+import VideoSection from "./components/VideoSection";
 
 // Page Components
 import AboutUs from './components/AboutUs';
 import ContactUs from './components/ContactUs';
+import DownloadPage from './components/DownloadPage';
 import LegalPage from './components/LegalPage'; // Handles both Policies and Terms
 import FooterComponent from './components/FooterComponent';
 
@@ -31,6 +33,7 @@ function App() {
               element={
                 <>
                   <HeroSection />
+                  <VideoSection />
                   <CategorySection />
                 </>
               }
@@ -41,11 +44,14 @@ function App() {
             
             {/* 3. Contact Us Page */}
             <Route path="/contact" element={<ContactUs />} />
+
+            {/* 4. Download Page */}
+            <Route path="/download" element={<DownloadPage />} />
             
-            {/* 4. Policies Page - Uses the reusable LegalPage component */}
+            {/* 5. Policies Page - Uses the reusable LegalPage component */}
             <Route path="/policies" element={<LegalPage type="Policies" />} />
             
-            {/* 5. Terms Page - Uses the reusable LegalPage component */}
+            {/* 6. Terms Page - Uses the reusable LegalPage component */}
             <Route path="/privacy" element={<LegalPage type="Terms" />} /> 
             {/* Assuming 'privacy' link in your Navbar maps to 'Terms' content for simplicity, 
                 as we only defined 'Policies' and 'Terms' in LegalPage.js */}
