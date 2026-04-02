@@ -6,7 +6,8 @@
   "homepage": "https://naijagoapp.com",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "node scripts/build-dist.mjs",
+    "build:root": "node scripts/sync-dist-to-root.mjs",
     "preview": "vite preview",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist -f"
