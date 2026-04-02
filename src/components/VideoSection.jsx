@@ -4,15 +4,15 @@ import "./VideoSection.css";
 const videoHighlights = [
   {
     title: "Founder-led introduction",
-    text: "Hear the NaijaGo story directly from the founder in a personal and engaging format.",
+    text: "Hear directly from the founder as he shares the story behind NaijaGo, the vision driving it, and why the platform was built to solve real everyday challenges.",
   },
   {
     title: "Clear product context",
-    text: "Understand what the app does, who it serves, and why it matters before continuing to browse.",
+    text: "Understand how NaijaGo works, who it serves, and how it connects people to nearby vendors, essential services, and fast delivery within 24 hours.",
   },
   {
     title: "Stronger trust",
-    text: "Video helps visitors connect with the brand faster and builds confidence in the vision behind NaijaGo.",
+    text: "A founder-led video helps new visitors connect with the brand faster, understand the mission clearly, and build confidence in the future of NaijaGo.",
   },
 ];
 
@@ -28,9 +28,12 @@ const VideoSection = () => {
             <h2 className="video-section__title">Meet NaijaGo</h2>
 
             <p className="video-section__subtitle">
-              Get a quick introduction to NaijaGo through a short video from
-              the founder. Discover what the app does, the real problem it
-              solves, and the bigger vision driving the platform forward.
+              Discover NaijaGo through a short founder-led introduction. NaijaGo
+              is a hyper-local e-commerce and service platform that connects
+              people to nearby vendors, essential services, and fast delivery
+              within 24 hours. Learn how the platform is solving real everyday
+              needs while building a more connected and trusted marketplace
+              across Nigeria.
             </p>
 
             <div className="video-section__points">
@@ -44,7 +47,9 @@ const VideoSection = () => {
           </div>
 
           <div className="video-section__player-card">
-            <h3 className="video-section__player-title">Meet NaijaGo</h3>
+            <h3 className="video-section__player-title">
+              Founder Introduction
+            </h3>
 
             <div className="video-section__frame">
               <iframe
@@ -59,8 +64,9 @@ const VideoSection = () => {
             </div>
 
             <p className="video-section__caption">
-              A short founder introduction to NaijaGo, the problem it solves,
-              and the vision driving the platform forward.
+              A quick introduction to NaijaGo — a hyper-local platform
+              connecting users to nearby vendors, essential services, and fast
+              24-hour delivery while solving real everyday problems.
             </p>
           </div>
         </div>
