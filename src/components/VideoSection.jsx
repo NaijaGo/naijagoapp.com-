@@ -1,28 +1,18 @@
-import { Button, Container } from "react-bootstrap";
-import {
-  FaArrowRight,
-  FaCheckCircle,
-  FaPlayCircle,
-  FaStore,
-  FaUsers,
-} from "react-icons/fa";
+import { Container } from "react-bootstrap";
 import "./VideoSection.css";
 
 const videoHighlights = [
   {
-    icon: <FaPlayCircle />,
     title: "Founder-led introduction",
-    text: "Let visitors hear the NaijaGo story directly from you in a more personal format.",
+    text: "Hear the NaijaGo story directly from the founder in a personal and engaging format.",
   },
   {
-    icon: <FaStore />,
     title: "Clear product context",
-    text: "Explain what the app does, who it serves, and why it matters before users keep browsing.",
+    text: "Understand what the app does, who it serves, and why it matters before continuing to browse.",
   },
   {
-    icon: <FaUsers />,
     title: "Stronger trust",
-    text: "Video helps new visitors connect with the brand faster and understand the vision behind it.",
+    text: "Video helps visitors connect with the brand faster and builds confidence in the vision behind NaijaGo.",
   },
 ];
 
@@ -35,59 +25,26 @@ const VideoSection = () => {
       <Container className="video-section__container">
         <div className="video-section__shell">
           <div className="video-section__content">
-            <p className="video-section__eyebrow">
-              <FaPlayCircle className="me-2" />
-              Watch NaijaGo in action
-            </p>
-
-            <h2 className="video-section__title">
-              Give new visitors a quick video introduction to the NaijaGo app.
-            </h2>
+            <h2 className="video-section__title">Meet NaijaGo</h2>
 
             <p className="video-section__subtitle">
-              This section gives your homepage a natural place to feature the
-              YouTube video where you talk about NaijaGo, the problem it solves,
-              and the bigger vision behind the platform.
+              Get a quick introduction to NaijaGo through a short video from
+              the founder. Discover what the app does, the real problem it
+              solves, and the bigger vision driving the platform forward.
             </p>
 
-            <div className="video-section__highlights">
+            <div className="video-section__points">
               {videoHighlights.map((item) => (
-                <div key={item.title} className="video-section__highlight">
-                  <div className="video-section__highlight-icon">
-                    {item.icon}
-                  </div>
-
-                  <div>
-                    <h3>{item.title}</h3>
-                    <p>{item.text}</p>
-                  </div>
+                <div key={item.title} className="video-section__point">
+                  <h3>{item.title}</h3>
+                  <p>{item.text}</p>
                 </div>
               ))}
-            </div>
-
-            <div className="video-section__cta">
-              <Button
-                as="a"
-                href="https://www.youtube.com/watch?v=mphwR5HL0Pk"
-                target="_blank"
-                rel="noreferrer"
-                className="video-section__primary-btn"
-              >
-                Watch on YouTube <FaArrowRight className="ms-2" />
-              </Button>
-
-              <div className="video-section__note">
-                <FaCheckCircle className="me-2" />
-                Embedded directly on the homepage for easy viewing.
-              </div>
             </div>
           </div>
 
           <div className="video-section__player-card">
-            <div className="video-section__player-top">
-              <span className="video-section__player-badge">Featured Video</span>
-              <span className="video-section__player-meta">YouTube Embed</span>
-            </div>
+            <h3 className="video-section__player-title">Meet NaijaGo</h3>
 
             <div className="video-section__frame">
               <iframe
@@ -100,6 +57,11 @@ const VideoSection = () => {
                 loading="lazy"
               ></iframe>
             </div>
+
+            <p className="video-section__caption">
+              A short founder introduction to NaijaGo, the problem it solves,
+              and the vision driving the platform forward.
+            </p>
           </div>
         </div>
       </Container>
