@@ -1,0 +1,203 @@
+.category-section {
+  position: relative;
+  padding: 40px 0 90px;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(241, 245, 249, 0.55) 100%
+  );
+}
+
+.category-section__header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 34px;
+}
+
+.category-section__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  margin-bottom: 12px;
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.88);
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.05);
+  color: #2563eb;
+  font-size: 0.88rem;
+  font-weight: 700;
+}
+
+.category-section__title {
+  margin: 0 0 12px;
+  max-width: 720px;
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.category-section__subtitle {
+  margin: 0;
+  max-width: 640px;
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #64748b;
+}
+
+.category-section__view-all {
+  flex-shrink: 0;
+  border: none;
+  border-radius: 16px;
+  padding: 14px 20px;
+  background: #ffffff;
+  color: #0f172a;
+  font-weight: 700;
+  box-shadow: 0 14px 30px rgba(15, 23, 42, 0.08);
+  border: 1px solid rgba(148, 163, 184, 0.16);
+  transition: all 0.25s ease;
+}
+
+.category-section__view-all:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 20px 36px rgba(15, 23, 42, 0.1);
+}
+
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.category-card {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  min-height: 150px;
+  padding: 24px;
+  border-radius: 28px;
+  background: rgba(255, 255, 255, 0.86);
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  box-shadow: 0 20px 45px rgba(15, 23, 42, 0.06);
+  transition: all 0.28s ease;
+  cursor: pointer;
+}
+
+.category-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 28px 55px rgba(15, 23, 42, 0.12);
+}
+
+.category-card__icon {
+  width: 68px;
+  height: 68px;
+  border-radius: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  flex-shrink: 0;
+}
+
+.category-card__content h3 {
+  margin: 0 0 8px;
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.category-card__content p {
+  margin: 0;
+  color: #64748b;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+.category-card__arrow {
+  margin-left: auto;
+  width: 42px;
+  height: 42px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #0f172a;
+  background: rgba(248, 250, 252, 0.95);
+  box-shadow: inset 0 0 0 1px rgba(148, 163, 184, 0.12);
+}
+
+.category-card--blue .category-card__icon {
+  background: linear-gradient(135deg, #dbeafe, #eff6ff);
+  color: #2563eb;
+}
+
+.category-card--violet .category-card__icon {
+  background: linear-gradient(135deg, #ede9fe, #f5f3ff);
+  color: #7c3aed;
+}
+
+.category-card--green .category-card__icon {
+  background: linear-gradient(135deg, #dcfce7, #f0fdf4);
+  color: #16a34a;
+}
+
+.category-card--orange .category-card__icon {
+  background: linear-gradient(135deg, #ffedd5, #fff7ed);
+  color: #ea580c;
+}
+
+.category-card--pink .category-card__icon {
+  background: linear-gradient(135deg, #fce7f3, #fdf2f8);
+  color: #db2777;
+}
+
+.category-card--slate .category-card__icon {
+  background: linear-gradient(135deg, #e2e8f0, #f8fafc);
+  color: #334155;
+}
+
+@media (max-width: 991px) {
+  .category-section__header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .category-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 767px) {
+  .category-section {
+    padding: 30px 0 70px;
+  }
+
+  .category-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .category-card {
+    min-height: 132px;
+    padding: 20px;
+    border-radius: 24px;
+  }
+
+  .category-card__icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 18px;
+  }
+
+  .category-card__content h3 {
+    font-size: 1.08rem;
+  }
+
+  .category-section__view-all {
+    width: 100%;
+  }
+}

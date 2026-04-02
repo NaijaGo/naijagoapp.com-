@@ -1,0 +1,60 @@
+/* --- Typing Effect Styling --- */
+
+/* Position the container to float coolly on the right/center */
+.typing-container {
+    position: absolute;
+    top: 50%;
+    right: 5%;
+    transform: translateY(-50%);
+    z-index: 15; /* Above glass overlay */
+    padding: 20px;
+    border-radius: 10px;
+    /* Semi-transparent Navy Blue card with glass effect */
+    background: rgba(0, 0, 77, 0.7); 
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    max-width: 300px;
+    text-align: left;
+    color: white; /* White text for readability */
+}
+
+.typing-header {
+    color: #ffa500; /* Orange header */
+    font-weight: bold;
+    border-bottom: 2px solid rgba(255, 165, 0, 0.3);
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+}
+
+/* Style for completed lines */
+.typed-line {
+    margin-bottom: 5px;
+    opacity: 0.8;
+}
+
+/* Style for the line currently being typed */
+.current-typing {
+    color: #ffa500; /* Orange text while typing */
+    font-weight: bold;
+    min-height: 20px; /* Prevent jump when line breaks */
+}
+
+/* Blinking cursor animation */
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+.typing-cursor {
+    display: inline-block;
+    animation: blink 0.7s infinite;
+    font-weight: 300;
+}
+
+/* Responsive adjustment: Hide on small screens */
+@media (max-width: 992px) {
+    .typing-container {
+        display: none !important; /* Hide on tablets/mobile to avoid clutter */
+    }
+}

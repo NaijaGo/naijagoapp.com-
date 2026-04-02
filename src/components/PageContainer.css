@@ -1,0 +1,92 @@
+.page-wrapper {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  background:
+    radial-gradient(circle at top left, rgba(37, 99, 235, 0.06), transparent 24%),
+    radial-gradient(circle at top right, rgba(14, 165, 233, 0.05), transparent 20%),
+    linear-gradient(180deg, #ffffff 0%, #f8fbff 58%, #f3f7fc 100%);
+  overflow: hidden;
+}
+
+.page-content {
+  position: relative;
+  z-index: 1;
+  padding-top: 120px;
+  padding-bottom: 88px;
+  max-width: 1320px;
+  margin: 0 auto;
+}
+
+.page-title {
+  margin: 0;
+  font-size: clamp(2.2rem, 4vw, 3.4rem);
+  line-height: 1.05;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: #0f172a;
+}
+
+.page-divider {
+  width: 92px;
+  height: 5px;
+  margin: 18px auto 0;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #2563eb, #60a5fa);
+  box-shadow: 0 10px 24px rgba(37, 99, 235, 0.2);
+}
+
+.page-body {
+  margin-top: 48px;
+}
+
+@keyframes pageFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.page-animate {
+  animation: pageFadeUp 0.6s ease-out both;
+}
+
+.page-animate-delay {
+  animation: pageFadeUp 0.75s ease-out both;
+  animation-delay: 0.08s;
+}
+
+@media (max-width: 991px) {
+  .page-content {
+    padding-top: 110px;
+    padding-bottom: 72px;
+  }
+
+  .page-body {
+    margin-top: 40px;
+  }
+}
+
+@media (max-width: 575px) {
+  .page-content {
+    padding-top: 102px;
+    padding-bottom: 64px;
+  }
+
+  .page-title {
+    font-size: 2rem;
+  }
+
+  .page-divider {
+    width: 74px;
+    height: 4px;
+  }
+
+  .page-body {
+    margin-top: 34px;
+  }
+}

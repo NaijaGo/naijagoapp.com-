@@ -1,0 +1,101 @@
+.legal-shell {
+  display: grid;
+  gap: 26px;
+}
+
+.legal-shell__intro {
+  padding: 34px;
+  border-radius: 28px;
+  background: linear-gradient(135deg, #eff6ff, #f8fbff);
+  border: 1px solid rgba(148, 163, 184, 0.16);
+  box-shadow: 0 20px 45px rgba(15, 23, 42, 0.06);
+}
+
+.legal-shell__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 18px;
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: #ffffff;
+  color: #2563eb;
+  font-size: 0.9rem;
+  font-weight: 700;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.05);
+}
+
+.legal-shell__intro h2 {
+  margin: 0 0 14px;
+  font-size: clamp(2rem, 3vw, 2.8rem);
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+  font-weight: 800;
+  color: #0f172a;
+  max-width: 760px;
+}
+
+.legal-shell__intro p {
+  margin: 0;
+  max-width: 760px;
+  color: #64748b;
+  line-height: 1.8;
+  font-size: 1rem;
+}
+
+.legal-accordion {
+  display: grid;
+  gap: 14px;
+}
+
+.legal-accordion__item {
+  border: none !important;
+  border-radius: 22px !important;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 18px 36px rgba(15, 23, 42, 0.06);
+  border: 1px solid rgba(148, 163, 184, 0.14) !important;
+}
+
+.legal-accordion .accordion-button {
+  background: #ffffff !important;
+  color: #0f172a !important;
+  font-weight: 800;
+  font-size: 1rem;
+  padding: 22px 24px;
+  box-shadow: none !important;
+}
+
+.legal-accordion .accordion-button:not(.collapsed) {
+  background: #eff6ff !important;
+  color: #1d4ed8 !important;
+}
+
+.legal-accordion .accordion-button:focus {
+  box-shadow: none !important;
+}
+
+.legal-accordion .accordion-body {
+  padding: 22px 24px 24px;
+  background: #ffffff;
+  color: #475569;
+  line-height: 1.8;
+  font-size: 0.98rem;
+}
+
+.legal-accordion .accordion-button::after {
+  filter: hue-rotate(190deg) saturate(2);
+}
+
+@media (max-width: 767px) {
+  .legal-shell__intro {
+    padding: 24px;
+    border-radius: 24px;
+  }
+
+  .legal-accordion .accordion-button,
+  .legal-accordion .accordion-body {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+}
