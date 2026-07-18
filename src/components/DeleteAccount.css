@@ -126,6 +126,32 @@
   margin-bottom: 16px;
 }
 
+.delete-action-card { border-top: 5px solid #dc2626; }
+
+.delete-form { display: grid; gap: 10px; margin-top: 24px; }
+.delete-form label { color: #111827; font-weight: 700; margin-top: 8px; }
+.delete-form input[type="email"],
+.delete-form input[type="password"],
+.delete-form input[type="text"] {
+  width: 100%;
+  border: 1px solid #cbd5e1;
+  border-radius: 12px;
+  padding: 13px 14px;
+  color: #111827;
+  background: #ffffff;
+  font: inherit;
+}
+.delete-form input:focus { border-color: #2563eb; box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.16); outline: none; }
+.delete-check { display: flex; align-items: flex-start; gap: 12px; font-weight: 500 !important; line-height: 1.55; margin: 12px 0; }
+.delete-check input { width: 19px; height: 19px; flex: 0 0 auto; margin-top: 2px; accent-color: #dc2626; }
+.delete-button { border: 0; border-radius: 12px; padding: 14px 18px; color: #ffffff; background: #dc2626; font: inherit; font-weight: 800; cursor: pointer; }
+.delete-button:hover:not(:disabled) { background: #b91c1c; }
+.delete-button:disabled { cursor: not-allowed; opacity: 0.5; }
+.delete-status { border-radius: 12px; padding: 14px 16px; margin-top: 18px; font-weight: 700; }
+.delete-status-pending { color: #1e40af; background: #eff6ff; border: 1px solid #bfdbfe; }
+.delete-status-success { color: #166534; background: #f0fdf4; border: 1px solid #bbf7d0; }
+.delete-status-error { color: #991b1b; background: #fef2f2; border: 1px solid #fecaca; }
+
 @media (max-width: 700px) {
   .delete-hero {
     padding: 70px 18px 100px;
