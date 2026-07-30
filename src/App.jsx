@@ -1,4 +1,6 @@
+// import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { useEffect } from 'react';
 
 // Core Components
 import NavbarComponent from './components/NavbarComponent';
@@ -18,6 +20,22 @@ import FooterComponent from './components/FooterComponent';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
+
+useEffect(() => {
+
+  const params = new URLSearchParams(window.location.search);
+
+  const redirect = params.get("redirect");
+
+  if (redirect) {
+    window.history.replaceState(
+      {},
+      "",
+      redirect
+    );
+  }
+
+}, []);
   return (
     <Router>
       <div className="App-Layout">
