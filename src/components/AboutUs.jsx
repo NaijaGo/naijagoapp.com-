@@ -1,3 +1,4 @@
+
 import React from "react";
 import { Row, Col, Card } from "react-bootstrap";
 import PageContainer from "./PageContainer";
@@ -40,6 +41,45 @@ const AboutUs = () => {
     <PageContainer title="About NaijaGo">
       <Row className="justify-content-center">
         <Col lg={10} className="about-intro">
+
+          {/* Company information for Kora compliance */}
+          <div className="about-card">
+            <h3>Company and Business Activities</h3>
+
+            <p>
+              NaijaGo is a technology platform operated by{" "}
+              <strong>NAIJAGO APP LTD</strong>, a company registered
+              in Nigeria under registration number{" "}
+              <strong>RC 8704653</strong>.
+            </p>
+
+            <p>
+              NaijaGo connects customers with local businesses across
+              Nigeria. Through our platform, customers can discover
+              products offered by local businesses and place orders.
+            </p>
+
+            <p>
+              We provide logistics infrastructure to facilitate the
+              delivery of products from local businesses to customers.
+              Our platform helps local businesses reach customers
+              through online product discovery and commerce.
+            </p>
+
+            <p>
+              <strong>Registered Business Name:</strong> NAIJAGO APP LTD
+              <br />
+              <strong>Registration Number:</strong> RC 8704653
+              <br />
+              <strong>Country of Registration:</strong> Nigeria
+              <br />
+              <strong>Website:</strong>{" "}
+              <a href="https://www.naijagoapp.com">
+                www.naijagoapp.com
+              </a>
+            </p>
+          </div>
+
           <div className="about-card">
             <FaBullseye className="about-icon" />
 
