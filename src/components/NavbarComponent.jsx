@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Container } from "react-bootstrap";
 import { FaBars, FaDownload, FaMobileAlt, FaTimes } from "react-icons/fa";
@@ -40,6 +41,9 @@ const NavbarComponent = () => {
               <div className="ng-brand__text">
                 <span className="ng-brand__name">NaijaGo</span>
                 <span className="ng-brand__tag">Modern Commerce</span>
+                <span className="ng-brand__tag">
+                  Operated by NAIJAGO APP LTD | RC 8704653
+                </span>
               </div>
             </Link>
 
