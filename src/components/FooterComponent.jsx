@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
@@ -129,8 +130,36 @@ const FooterComponent = () => {
             </Row>
           </div>
 
+          {/* Company information for Kora compliance */}
+          <div className="ng-footer__company">
+            <h5>Business Information</h5>
+
+            <p>
+              <strong>NAIJAGO APP LTD</strong> is a company registered
+              in Nigeria (RC 8704653).
+            </p>
+
+            <p>
+              NaijaGo is a technology platform that connects customers
+              with local businesses. Customers can discover products
+              and place orders through the platform. NaijaGo provides
+              logistics infrastructure to facilitate the delivery of
+              products from local businesses to customers.
+            </p>
+
+            <p>
+              Website:{" "}
+              <a href="https://www.naijagoapp.com">
+                www.naijagoapp.com
+              </a>
+            </p>
+          </div>
+
           <div className="ng-footer__bottom">
-            <p>© {new Date().getFullYear()} NaijaGo. All Rights Reserved.</p>
+            <p>
+              © {new Date().getFullYear()} NaijaGo. All Rights Reserved.
+              Operated by NAIJAGO APP LTD (RC 8704653).
+            </p>
           </div>
         </Container>
       </footer>
