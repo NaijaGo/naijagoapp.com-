@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Container } from "react-bootstrap";
 import { FaBars, FaDownload, FaMobileAlt, FaTimes } from "react-icons/fa";
@@ -22,10 +21,12 @@ const NavbarComponent = () => {
   const location = useLocation();
 
   const closeMenu = () => setMenuOpen(false);
+
   const openDownloadModal = () => {
     setMenuOpen(false);
     setDownloadModalOpen(true);
   };
+
   const closeDownloadModal = () => setDownloadModalOpen(false);
 
   return (
@@ -39,11 +40,18 @@ const NavbarComponent = () => {
               </div>
 
               <div className="ng-brand__text">
-                <span className="ng-brand__name">NaijaGo</span>
-                <span className="ng-brand__tag">Modern Commerce</span>
-                <span className="ng-brand__tag">
-                  Operated by NAIJAGO APP LTD | RC 8704653
+                <span className="ng-brand__name">
+                  NaijaGo
                 </span>
+
+                <span className="ng-brand__tag">
+                  Modern Commerce
+                </span>
+
+                {/* Registered company details */}
+                <strong className="ng-brand__tag">
+                  Operated by NAIJAGO APP LTD | RC 8704653
+                </strong>
               </div>
             </Link>
 
@@ -62,12 +70,18 @@ const NavbarComponent = () => {
             </nav>
 
             <div className="ng-navbar-actions">
-              <Link to={DOWNLOAD_PAGE_PATH} className="ng-download-shortcut">
+              <Link
+                to={DOWNLOAD_PAGE_PATH}
+                className="ng-download-shortcut"
+              >
                 <FaMobileAlt className="me-2" />
                 Download Page
               </Link>
 
-              <button className="ng-download-btn" onClick={openDownloadModal}>
+              <button
+                className="ng-download-btn"
+                onClick={openDownloadModal}
+              >
                 <FaDownload className="me-2" />
                 Get the App
               </button>
@@ -88,7 +102,11 @@ const NavbarComponent = () => {
         <div className="ng-mobile-panel__inner">
           <div className="ng-mobile-panel__top">
             <span>Menu</span>
-            <button onClick={closeMenu} className="ng-mobile-close">
+
+            <button
+              onClick={closeMenu}
+              className="ng-mobile-close"
+            >
               <FaTimes />
             </button>
           </div>
@@ -120,14 +138,20 @@ const NavbarComponent = () => {
             Open the download page
           </Link>
 
-          <button className="ng-mobile-download-btn" onClick={openDownloadModal}>
+          <button
+            className="ng-mobile-download-btn"
+            onClick={openDownloadModal}
+          >
             <FaDownload className="me-2" />
             Get the App
           </button>
         </div>
       </div>
 
-      <DownloadModal isOpen={downloadModalOpen} onClose={closeDownloadModal} />
+      <DownloadModal
+        isOpen={downloadModalOpen}
+        onClose={closeDownloadModal}
+      />
     </>
   );
 };
