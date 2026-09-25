@@ -1,3 +1,4 @@
+```jsx
 import { useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
@@ -19,8 +20,10 @@ const FooterComponent = () => {
     <>
       <footer className="ng-footer">
         <Container>
+          {/* Footer Top */}
           <div className="ng-footer__top">
             <Row className="g-4 align-items-start">
+              {/* Brand */}
               <Col lg={4} md={6}>
                 <div className="ng-footer__brand">
                   <div className="ng-footer__brand-badge">
@@ -38,6 +41,7 @@ const FooterComponent = () => {
                   </p>
 
                   <button
+                    type="button"
                     className="ng-footer__cta"
                     onClick={() => setDownloadModalOpen(true)}
                   >
@@ -47,6 +51,7 @@ const FooterComponent = () => {
                 </div>
               </Col>
 
+              {/* Quick Links */}
               <Col lg={2} md={6}>
                 <div className="ng-footer__group">
                   <h5>Quick Links</h5>
@@ -73,13 +78,16 @@ const FooterComponent = () => {
                 </div>
               </Col>
 
+              {/* Legal */}
               <Col lg={2} md={6}>
                 <div className="ng-footer__group">
                   <h5>Legal</h5>
 
                   <ul>
                     <li>
-                      <Link to="/policies">Policies</Link>
+                      <Link to="/policies">
+                        Policies
+                      </Link>
                     </li>
 
                     <li>
@@ -91,6 +99,7 @@ const FooterComponent = () => {
                 </div>
               </Col>
 
+              {/* Social */}
               <Col lg={4} md={6}>
                 <div className="ng-footer__group">
                   <h5>Stay Connected</h5>
@@ -147,15 +156,29 @@ const FooterComponent = () => {
             </Row>
           </div>
 
-          {/* Company information for Kora compliance */}
+          {/* =========================================
+              REGISTERED COMPANY INFORMATION
+          ========================================= */}
           <div className="ng-footer__company">
-            <h5>Business Information</h5>
+            <div className="ng-footer__company-header">
+              <span className="ng-footer__company-label">
+                REGISTERED BUSINESS
+              </span>
+
+              <h4>
+                NAIJAGO APP LTD
+              </h4>
+
+              <div className="ng-footer__rc">
+                RC 8704653
+              </div>
+            </div>
 
             <p>
               <strong>
                 NAIJAGO APP LTD (RC 8704653)
-              </strong>
-              {" "}is a company registered in Nigeria.
+              </strong>{" "}
+              is a company registered in Nigeria.
             </p>
 
             <p>
@@ -167,29 +190,38 @@ const FooterComponent = () => {
               businesses to customers.
             </p>
 
-            <p>
-              <strong>Website: </strong>
-              <a href="https://www.naijagoapp.com">
+            <p className="ng-footer__website">
+              <strong>Website:</strong>{" "}
+              <a
+                href="https://www.naijagoapp.com"
+                target="_blank"
+                rel="noreferrer"
+              >
                 www.naijagoapp.com
               </a>
             </p>
           </div>
 
-          {/* Footer copyright and registered company details */}
+          {/* =========================================
+              COPYRIGHT
+          ========================================= */}
           <div className="ng-footer__bottom">
             <p>
               © {new Date().getFullYear()} NaijaGo.
               All Rights Reserved.
-              {" "}
+            </p>
+
+            <p className="ng-footer__operator">
               Operated by{" "}
               <strong>
                 NAIJAGO APP LTD (RC 8704653)
-              </strong>.
+              </strong>
             </p>
           </div>
         </Container>
       </footer>
 
+      {/* Download Modal */}
       <DownloadModal
         isOpen={downloadModalOpen}
         onClose={() => setDownloadModalOpen(false)}
@@ -199,3 +231,4 @@ const FooterComponent = () => {
 };
 
 export default FooterComponent;
+```
