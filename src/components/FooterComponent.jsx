@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
@@ -24,12 +23,18 @@ const FooterComponent = () => {
             <Row className="g-4 align-items-start">
               <Col lg={4} md={6}>
                 <div className="ng-footer__brand">
-                  <div className="ng-footer__brand-badge">NaijaGo</div>
-                  <h3>Your gateway to smarter Nigerian commerce.</h3>
+                  <div className="ng-footer__brand-badge">
+                    NaijaGo
+                  </div>
+
+                  <h3>
+                    Your gateway to smarter Nigerian commerce.
+                  </h3>
+
                   <p>
-                    Discover trusted vendors, quality products, and a cleaner
-                    digital marketplace experience built for modern buyers and
-                    sellers.
+                    Discover trusted vendors, quality products, and
+                    a cleaner digital marketplace experience built
+                    for modern buyers and sellers.
                   </p>
 
                   <button
@@ -45,18 +50,24 @@ const FooterComponent = () => {
               <Col lg={2} md={6}>
                 <div className="ng-footer__group">
                   <h5>Quick Links</h5>
+
                   <ul>
                     <li>
                       <Link to="/">Home</Link>
                     </li>
+
                     <li>
                       <Link to="/about">About Us</Link>
                     </li>
+
                     <li>
                       <Link to="/contact">Contact Us</Link>
                     </li>
+
                     <li>
-                      <Link to={DOWNLOAD_PAGE_PATH}>Download App</Link>
+                      <Link to={DOWNLOAD_PAGE_PATH}>
+                        Download App
+                      </Link>
                     </li>
                   </ul>
                 </div>
@@ -65,12 +76,16 @@ const FooterComponent = () => {
               <Col lg={2} md={6}>
                 <div className="ng-footer__group">
                   <h5>Legal</h5>
+
                   <ul>
                     <li>
                       <Link to="/policies">Policies</Link>
                     </li>
+
                     <li>
-                      <Link to="/privacy">Privacy & Terms</Link>
+                      <Link to="/privacy">
+                        Privacy & Terms
+                      </Link>
                     </li>
                   </ul>
                 </div>
@@ -79,9 +94,11 @@ const FooterComponent = () => {
               <Col lg={4} md={6}>
                 <div className="ng-footer__group">
                   <h5>Stay Connected</h5>
+
                   <p className="ng-footer__small">
-                    Follow NaijaGo across our social platforms and stay updated on
-                    marketplace news, offers, and community growth.
+                    Follow NaijaGo across our social platforms
+                    and stay updated on marketplace news,
+                    offers, and community growth.
                   </p>
 
                   <div className="ng-footer__socials">
@@ -135,30 +152,39 @@ const FooterComponent = () => {
             <h5>Business Information</h5>
 
             <p>
-              <strong>NAIJAGO APP LTD</strong> is a company registered
-              in Nigeria (RC 8704653).
+              <strong>
+                NAIJAGO APP LTD (RC 8704653)
+              </strong>
+              {" "}is a company registered in Nigeria.
             </p>
 
             <p>
-              NaijaGo is a technology platform that connects customers
-              with local businesses. Customers can discover products
-              and place orders through the platform. NaijaGo provides
-              logistics infrastructure to facilitate the delivery of
-              products from local businesses to customers.
+              NaijaGo is a technology platform that connects
+              customers with local businesses. Customers can
+              discover products and place orders through the
+              platform. NaijaGo provides logistics infrastructure
+              to facilitate the delivery of products from local
+              businesses to customers.
             </p>
 
             <p>
-              Website:{" "}
+              <strong>Website: </strong>
               <a href="https://www.naijagoapp.com">
                 www.naijagoapp.com
               </a>
             </p>
           </div>
 
+          {/* Footer copyright and registered company details */}
           <div className="ng-footer__bottom">
             <p>
-              © {new Date().getFullYear()} NaijaGo. All Rights Reserved.
-              Operated by NAIJAGO APP LTD (RC 8704653).
+              © {new Date().getFullYear()} NaijaGo.
+              All Rights Reserved.
+              {" "}
+              Operated by{" "}
+              <strong>
+                NAIJAGO APP LTD (RC 8704653)
+              </strong>.
             </p>
           </div>
         </Container>
