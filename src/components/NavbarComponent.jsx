@@ -1,6 +1,12 @@
+```jsx
 import { useState } from "react";
 import { Container } from "react-bootstrap";
-import { FaBars, FaDownload, FaMobileAlt, FaTimes } from "react-icons/fa";
+import {
+  FaBars,
+  FaDownload,
+  FaMobileAlt,
+  FaTimes,
+} from "react-icons/fa";
 import { Link, useLocation } from "react-router-dom";
 import { DOWNLOAD_PAGE_PATH } from "../constants/appLinks";
 import DownloadModal from "./DownloadModal";
@@ -34,6 +40,7 @@ const NavbarComponent = () => {
       <header className="ng-navbar-wrap">
         <Container>
           <div className="ng-navbar">
+            {/* Brand */}
             <Link to="/" className="ng-brand" onClick={closeMenu}>
               <div className="ng-brand__logo">
                 <img src="/naijaLogo.jpg" alt="NaijaGo Logo" />
@@ -48,13 +55,13 @@ const NavbarComponent = () => {
                   Modern Commerce
                 </span>
 
-                {/* Registered company details */}
-                <strong className="ng-brand__tag">
+                <strong className="ng-brand__company">
                   Operated by NAIJAGO APP LTD | RC 8704653
                 </strong>
               </div>
             </Link>
 
+            {/* Desktop Navigation */}
             <nav className="ng-nav-links">
               {navLinks.map((item) => (
                 <Link
@@ -69,6 +76,7 @@ const NavbarComponent = () => {
               ))}
             </nav>
 
+            {/* Desktop Actions */}
             <div className="ng-navbar-actions">
               <Link
                 to={DOWNLOAD_PAGE_PATH}
@@ -86,10 +94,12 @@ const NavbarComponent = () => {
                 Get the App
               </button>
 
+              {/* Mobile Menu Button */}
               <button
                 className="ng-mobile-toggle"
                 onClick={() => setMenuOpen(!menuOpen)}
                 aria-label="Toggle menu"
+                aria-expanded={menuOpen}
               >
                 {menuOpen ? <FaTimes /> : <FaBars />}
               </button>
@@ -98,7 +108,12 @@ const NavbarComponent = () => {
         </Container>
       </header>
 
-      <div className={`ng-mobile-panel ${menuOpen ? "open" : ""}`}>
+      {/* Mobile Menu */}
+      <div
+        className={`ng-mobile-panel ${
+          menuOpen ? "open" : ""
+        }`}
+      >
         <div className="ng-mobile-panel__inner">
           <div className="ng-mobile-panel__top">
             <span>Menu</span>
@@ -106,6 +121,7 @@ const NavbarComponent = () => {
             <button
               onClick={closeMenu}
               className="ng-mobile-close"
+              aria-label="Close menu"
             >
               <FaTimes />
             </button>
@@ -117,7 +133,9 @@ const NavbarComponent = () => {
                 key={item.path}
                 to={item.path}
                 className={`ng-mobile-link ${
-                  location.pathname === item.path ? "active" : ""
+                  location.pathname === item.path
+                    ? "active"
+                    : ""
                 }`}
                 onClick={closeMenu}
               >
@@ -127,7 +145,8 @@ const NavbarComponent = () => {
           </div>
 
           <div className="ng-mobile-download-note">
-            Sign in and vendor registration happen inside the NaijaGo app.
+            Sign in and vendor registration happen inside the
+            NaijaGo app.
           </div>
 
           <Link
@@ -148,6 +167,7 @@ const NavbarComponent = () => {
         </div>
       </div>
 
+      {/* Download Modal */}
       <DownloadModal
         isOpen={downloadModalOpen}
         onClose={closeDownloadModal}
@@ -157,3 +177,4 @@ const NavbarComponent = () => {
 };
 
 export default NavbarComponent;
+```
