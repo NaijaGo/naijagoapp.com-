@@ -1,11 +1,41 @@
-```css
 .ng-navbar-wrap {
   position: fixed;
-  top: 18px;
+  top: 0;
   left: 0;
   width: 100%;
   z-index: 1000;
   pointer-events: none;
+}
+
+.ng-registration-bar {
+  width: 100%;
+  min-height: 32px;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(90deg, #173f9f 0%, #2258c7 55%, #173f9f 100%);
+  color: #ffffff;
+  box-shadow: 0 8px 24px rgba(23, 63, 159, 0.2);
+  pointer-events: auto;
+}
+
+.ng-registration-bar__inner {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+  min-height: 32px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+.ng-registration-bar__inner strong {
+  font-weight: 800;
+}
+
+.ng-registration-bar__separator {
+  color: #b8fa54;
+  font-size: 0.72rem;
 }
 
 .ng-navbar-wrap .container {
@@ -23,6 +53,7 @@
   border: 1px solid rgba(148, 163, 184, 0.18);
   backdrop-filter: blur(14px);
   box-shadow: 0 18px 50px rgba(15, 23, 42, 0.1);
+  margin-top: 14px;
 }
 
 /* =========================
@@ -195,7 +226,7 @@
 
 .ng-mobile-panel {
   position: fixed;
-  top: 88px;
+  top: 132px;
   left: 0;
   right: 0;
   z-index: 999;
@@ -327,11 +358,16 @@
 ========================= */
 
 @media (max-width: 575px) {
-  .ng-navbar-wrap {
-    top: 12px;
+  .ng-registration-bar__inner {
+    justify-content: center;
+    gap: 6px;
+    min-height: 30px;
+    padding-inline: 10px;
+    font-size: 0.7rem;
   }
 
   .ng-navbar {
+    margin-top: 10px;
     padding: 12px 14px;
     border-radius: 20px;
     gap: 10px;
@@ -341,6 +377,10 @@
     gap: 9px;
     min-width: 0;
     flex: 1;
+  }
+
+  .ng-mobile-panel {
+    top: 116px;
   }
 
   .ng-brand__logo {
@@ -408,4 +448,3 @@
     height: 40px;
   }
 }
-```

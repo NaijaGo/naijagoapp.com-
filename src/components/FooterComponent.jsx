@@ -1,4 +1,3 @@
-```jsx
 import { useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
@@ -207,7 +206,7 @@ const FooterComponent = () => {
           ========================================= */}
           <div className="ng-footer__bottom">
             <p>
-              © {new Date().getFullYear()} NaijaGo.
+              &copy; {new Date().getFullYear()} NaijaGo.
               All Rights Reserved.
             </p>
 
@@ -231,4 +230,3 @@ const FooterComponent = () => {
 };
 
 export default FooterComponent;
-```

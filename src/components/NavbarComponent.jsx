@@ -1,4 +1,3 @@
-```jsx
 import { useState } from "react";
 import { Container } from "react-bootstrap";
 import {
@@ -38,6 +37,20 @@ const NavbarComponent = () => {
   return (
     <>
       <header className="ng-navbar-wrap">
+        <div className="ng-registration-bar" role="note" aria-label="Company registration">
+          <Container className="ng-registration-bar__inner">
+            <span>Registered in Nigeria</span>
+            <span className="ng-registration-bar__separator" aria-hidden="true">
+              &bull;
+            </span>
+            <strong>NaijagoApp LTD</strong>
+            <span className="ng-registration-bar__separator" aria-hidden="true">
+              &bull;
+            </span>
+            <span>RC 8704653</span>
+          </Container>
+        </div>
+
         <Container>
           <div className="ng-navbar">
             {/* Brand */}
@@ -177,4 +190,3 @@ const NavbarComponent = () => {
 };
 
 export default NavbarComponent;
-```

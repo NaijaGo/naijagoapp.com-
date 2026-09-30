@@ -15,7 +15,7 @@
     ),
     linear-gradient(180deg, #f8fafc 0%, #eef3f8 52%, #f7f9fc 100%);
   color: #0f172a;
-  padding: 140px 0 60px;
+  padding: 176px 0 60px;
 }
 
 .hero-v2__container {
@@ -490,7 +490,7 @@
 
 @media (max-width: 767px) {
   .hero-v2 {
-    padding: 120px 0 48px;
+    padding: 154px 0 48px;
   }
 
   .hero-v2__title {
