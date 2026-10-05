@@ -165,28 +165,15 @@ const FooterComponent = () => {
               </span>
 
               <h4>
-                NAIJAGO APP LTD
+                NAIJAGO APP LTD — RC 8704653
               </h4>
-
-              <div className="ng-footer__rc">
-                RC 8704653
-              </div>
             </div>
 
             <p>
-              <strong>
-                NAIJAGO APP LTD (RC 8704653)
-              </strong>{" "}
-              is a company registered in Nigeria.
-            </p>
-
-            <p>
-              NaijaGo is a technology platform that connects
-              customers with local businesses. Customers can
-              discover products and place orders through the
-              platform. NaijaGo provides logistics infrastructure
-              to facilitate the delivery of products from local
-              businesses to customers.
+              NaijaGo is a technology platform that connects customers to local
+              businesses, enables them to discover, order and pay for products,
+              and provides the logistics infrastructure to get those products
+              delivered.
             </p>
 
             <p className="ng-footer__website">
@@ -211,10 +198,7 @@ const FooterComponent = () => {
             </p>
 
             <p className="ng-footer__operator">
-              Operated by{" "}
-              <strong>
-                NAIJAGO APP LTD (RC 8704653)
-              </strong>
+              <strong>NAIJAGO APP LTD — RC 8704653</strong>
             </p>
           </div>
         </Container>

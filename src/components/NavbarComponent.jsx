@@ -39,15 +39,8 @@ const NavbarComponent = () => {
       <header className="ng-navbar-wrap">
         <div className="ng-registration-bar" role="note" aria-label="Company registration">
           <Container className="ng-registration-bar__inner">
-            <span>Registered in Nigeria</span>
-            <span className="ng-registration-bar__separator" aria-hidden="true">
-              &bull;
-            </span>
-            <strong>NaijagoApp LTD</strong>
-            <span className="ng-registration-bar__separator" aria-hidden="true">
-              &bull;
-            </span>
-            <span>RC 8704653</span>
+            <strong>NAIJAGO APP LTD</strong>
+            <span>RC Number: RC 8704653</span>
           </Container>
         </div>
 
@@ -69,7 +62,7 @@ const NavbarComponent = () => {
                 </span>
 
                 <strong className="ng-brand__company">
-                  Operated by NAIJAGO APP LTD | RC 8704653
+                  Operated by NAIJAGO APP LTD | RC Number: RC 8704653
                 </strong>
               </div>
             </Link>
