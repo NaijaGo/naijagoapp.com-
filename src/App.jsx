@@ -15,6 +15,7 @@ import DownloadPage from './components/DownloadPage';
 import LegalPage from './components/LegalPage'; // Handles both Policies and Terms
 import DeleteAccount from './components/DeleteAccount';
 import FooterComponent from './components/FooterComponent';
+import VisitorAnalytics from './components/VisitorAnalytics';
 
 // Global Styles
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -82,6 +83,7 @@ useEffect(() => {
 
         {/* Footer is outside of Routes so it appears on every page */}
         <FooterComponent />
+        <VisitorAnalytics />
 
       </div>
     </Router>
