@@ -53,8 +53,8 @@ useEffect(() => {
               element={
                 <>
                   <HeroSection />
-                  <VideoSection />
                   <CategorySection />
+                  <VideoSection />
                 </>
               }
             />

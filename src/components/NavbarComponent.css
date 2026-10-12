@@ -109,6 +109,9 @@
   margin-top: 1px;
 }
 
+.ng-brand__naija { color: #2258c7; }
+.ng-brand__go { color: #208257; }
+
 .ng-brand__company {
   display: block;
   font-size: 0.68rem;
@@ -130,6 +133,7 @@
 }
 
 .ng-nav-link {
+  white-space: nowrap;
   text-decoration: none;
   color: #334155;
   font-weight: 600;
@@ -181,6 +185,7 @@
 }
 
 .ng-download-btn {
+  white-space: nowrap;
   border: none;
   border-radius: 14px;
   padding: 12px 18px;
@@ -335,7 +340,7 @@
    TABLET
 ========================= */
 
-@media (max-width: 991px) {
+@media (max-width: 1199px) {
   .ng-nav-links,
   .ng-download-shortcut,
   .ng-download-btn {

@@ -3,7 +3,6 @@ import { Container } from "react-bootstrap";
 import {
   FaBars,
   FaDownload,
-  FaMobileAlt,
   FaTimes,
 } from "react-icons/fa";
 import { Link, useLocation } from "react-router-dom";
@@ -54,7 +53,7 @@ const NavbarComponent = () => {
 
               <div className="ng-brand__text">
                 <span className="ng-brand__name">
-                  NaijaGo
+                  <span className="ng-brand__naija">Naija</span><span className="ng-brand__go">Go</span>
                 </span>
 
                 <span className="ng-brand__tag">
@@ -84,14 +83,6 @@ const NavbarComponent = () => {
 
             {/* Desktop Actions */}
             <div className="ng-navbar-actions">
-              <Link
-                to={DOWNLOAD_PAGE_PATH}
-                className="ng-download-shortcut"
-              >
-                <FaMobileAlt className="me-2" />
-                Download Page
-              </Link>
-
               <button
                 className="ng-download-btn"
                 onClick={openDownloadModal}

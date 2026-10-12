@@ -28,6 +28,7 @@ const run = async () => {
 
   await copyIfExists(path.join(distPath, "assets"), assetsPath);
   await copyIfExists(path.join(distPath, "badges"), badgesPath);
+  await copyIfExists(path.join(distPath, "images"), path.join(root, "images"));
   await copyIfExists(
     path.join(distPath, "delete-account"),
     path.join(root, "delete-account"),
