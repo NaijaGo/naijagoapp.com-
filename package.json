@@ -10,7 +10,8 @@
     "build:root": "node scripts/sync-dist-to-root.mjs",
     "preview": "vite preview",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist -f"
+    "deploy": "gh-pages -d dist -f",
+    "catalog": "node scripts/fetch-catalog.mjs"
   },
   "dependencies": {
     "bootstrap": "^5.3.8",

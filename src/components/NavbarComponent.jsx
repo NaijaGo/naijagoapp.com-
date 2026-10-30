@@ -12,6 +12,7 @@ import "./NavbarComponent.css";
 
 const navLinks = [
   { label: "Home", path: "/" },
+  { label: "Shop", path: "/shop" },
   { label: "About", path: "/about" },
   { label: "Contact", path: "/contact" },
   { label: "Download App", path: DOWNLOAD_PAGE_PATH },

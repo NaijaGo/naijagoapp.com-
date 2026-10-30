@@ -20,6 +20,7 @@ import BecomeVendor from './components/BecomeVendor';
 import BecomeRider from './components/BecomeRider';
 import FaqPage from './components/FaqPage';
 import NotFound from './components/NotFound';
+import { ShopIndex, CategoryPage } from './components/ShopPages';
 
 // Global Styles
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -72,6 +73,8 @@ function App() {
             <Route path="/become-a-vendor" element={<BecomeVendor />} />
             <Route path="/become-a-rider" element={<BecomeRider />} />
             <Route path="/faq" element={<FaqPage />} />
+            <Route path="/shop" element={<ShopIndex />} />
+            <Route path="/shop/:slug" element={<CategoryPage />} />
 
             <Route path="*" element={<NotFound />} />
           </Routes>

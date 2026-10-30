@@ -4,6 +4,9 @@
 // crawlers see the right title and description without running JavaScript).
 // Plain ESM with no JSX so Node can import it directly.
 
+import { MIN_PRODUCTS, shopCategories } from "./shopCategories.js";
+import { catalog } from "../data/catalog.js";
+
 export const SITE_URL = "https://naijagoapp.com";
 export const PRIVACY_POLICY_URL = "https://naijago-privacy-policy.onrender.com/";
 export const SUPPORT_EMAIL = "support@naijagoapp.com";
@@ -189,6 +192,66 @@ export const routes = [
   },
 ];
 
+// Category pages only exist when the catalogue snapshot has enough products.
+export const liveShopCategories = shopCategories.filter(
+  (category) => (catalog[category.slug]?.productCount || 0) >= MIN_PRODUCTS,
+);
+
+const productList = (category) => ({
+  "@type": "ItemList",
+  name: `${category.name} on NaijaGo`,
+  numberOfItems: catalog[category.slug].products.length,
+  itemListElement: catalog[category.slug].products.map((product, index) => ({
+    "@type": "ListItem",
+    position: index + 1,
+    item: {
+      "@type": "Product",
+      name: product.name,
+      image: product.image,
+      category: category.name,
+      offers: {
+        "@type": "Offer",
+        price: String(product.price),
+        priceCurrency: "NGN",
+        availability: "https://schema.org/InStock",
+      },
+    },
+  })),
+});
+
+routes.push(
+  {
+    path: "/shop",
+    name: "Shop",
+    title: "Shop Online in Abuja by Category | NaijaGo",
+    description:
+      "Browse fashion, groceries, phones, electronics, home, beauty, gaming and food from local vendors in Abuja on NaijaGo.",
+    priority: "0.9",
+    schema: [
+      {
+        "@type": "ItemList",
+        name: "NaijaGo shopping categories",
+        itemListElement: liveShopCategories.map((category, index) => ({
+          "@type": "ListItem",
+          position: index + 1,
+          name: category.name,
+          url: `${SITE_URL}/shop/${category.slug}/`,
+        })),
+      },
+    ],
+  },
+  ...liveShopCategories.map((category) => ({
+    path: `/shop/${category.slug}`,
+    name: category.name,
+    parent: { name: "Shop", path: "/shop" },
+    title: category.title,
+    description: category.description,
+    priority: "0.8",
+    category,
+    schema: [productList(category)],
+  })),
+);
+
 export const canonicalUrl = (path) => (path === "/" ? `${SITE_URL}/` : `${SITE_URL}${path}/`);
 
 export const findRoute = (pathname) => {
@@ -215,7 +278,10 @@ export const structuredData = (route) => {
       "@type": "BreadcrumbList",
       itemListElement: [
         { "@type": "ListItem", position: 1, name: "Home", item: `${SITE_URL}/` },
-        { "@type": "ListItem", position: 2, name: route.name, item: url },
+        ...(route.parent
+          ? [{ "@type": "ListItem", position: 2, name: route.parent.name, item: canonicalUrl(route.parent.path) }]
+          : []),
+        { "@type": "ListItem", position: route.parent ? 3 : 2, name: route.name, item: url },
       ],
     });
   }

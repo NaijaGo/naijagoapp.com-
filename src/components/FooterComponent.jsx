@@ -74,6 +74,9 @@ const FooterComponent = () => {
                       </Link>
                     </li>
                     <li>
+                      <Link to="/shop">Shop by Category</Link>
+                    </li>
+                    <li>
                       <Link to="/become-a-vendor">Sell on NaijaGo</Link>
                     </li>
                     <li>

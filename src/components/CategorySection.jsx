@@ -3,7 +3,13 @@ import { Link } from "react-router-dom";
 import { FaArrowRight, FaChevronDown, FaSearch, FaTimes } from "react-icons/fa";
 import { categoryShowcase } from "../constants/categoryShowcase";
 import { DOWNLOAD_PAGE_PATH } from "../constants/appLinks";
+import { liveShopCategories } from "../seo/siteMeta";
 import "./CategorySection.css";
+
+// Homepage showcase ids -> /shop/ category pages (only those that exist).
+const shopSlugFor = { electronics: "electronics", fashion: "fashion", groceries: "groceries", "home-living": "home-office", beauty: "health-beauty" };
+const shopPathFor = (id) =>
+  liveShopCategories.some((category) => category.slug === shopSlugFor[id]) ? `/shop/${shopSlugFor[id]}` : null;
 
 const CategorySection = () => {
   const [query, setQuery] = useState("");
@@ -76,6 +82,11 @@ const CategorySection = () => {
                   <ul className="category-card__subcategories">
                     {category.subcategories.map((subcategory) => <li key={subcategory}>{subcategory}</li>)}
                   </ul>
+                  {shopPathFor(category.id) && (
+                    <Link to={shopPathFor(category.id)} className="category-card__app-link">
+                      See {category.title} products <FaArrowRight aria-hidden="true" />
+                    </Link>
+                  )}
                   <Link to={DOWNLOAD_PAGE_PATH} className="category-card__app-link">
                     Browse {category.title} in the app <FaArrowRight aria-hidden="true" />
                   </Link>
@@ -91,6 +102,9 @@ const CategorySection = () => {
             <button type="button" onClick={() => setQuery("")}>Show featured categories</button>
           </div>
         )}
+        <p className="category-section__note">
+          <Link to="/shop">Shop all categories</Link>
+        </p>
         <p className="category-section__note">
           Images illustrate each category. See current products, prices and availability in the app.
         </p>
