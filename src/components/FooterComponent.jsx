@@ -73,6 +73,15 @@ const FooterComponent = () => {
                         Download App
                       </Link>
                     </li>
+                    <li>
+                      <Link to="/become-a-vendor">Sell on NaijaGo</Link>
+                    </li>
+                    <li>
+                      <Link to="/become-a-rider">Become a Rider</Link>
+                    </li>
+                    <li>
+                      <Link to="/faq">FAQ</Link>
+                    </li>
                   </ul>
                 </div>
               </Col>
@@ -93,6 +102,9 @@ const FooterComponent = () => {
                       <Link to="/privacy">
                         Privacy & Terms
                       </Link>
+                    </li>
+                    <li>
+                      <Link to="/delete-account">Delete Account</Link>
                     </li>
                   </ul>
                 </div>

@@ -2,6 +2,7 @@ import fs from "node:fs/promises";
 import { existsSync } from "node:fs";
 import path from "node:path";
 import { execSync } from "node:child_process";
+import { routes } from "../src/seo/siteMeta.js";
 
 const root = process.cwd();
 const distPath = path.join(root, "dist");
@@ -29,11 +30,15 @@ const run = async () => {
   await copyIfExists(path.join(distPath, "assets"), assetsPath);
   await copyIfExists(path.join(distPath, "badges"), badgesPath);
   await copyIfExists(path.join(distPath, "images"), path.join(root, "images"));
-  await copyIfExists(
-    path.join(distPath, "delete-account"),
-    path.join(root, "delete-account"),
-  );
+  // One folder per public route (written by build-dist.mjs).
+  for (const route of routes.filter((r) => r.path !== "/")) {
+    const routeDir = route.path.slice(1);
+    await removeIfExists(path.join(root, routeDir));
+    await copyIfExists(path.join(distPath, routeDir), path.join(root, routeDir));
+  }
   await copyIfExists(path.join(distPath, "index.html"), path.join(root, "index.html"));
+  await copyIfExists(path.join(distPath, "robots.txt"), path.join(root, "robots.txt"));
+  await copyIfExists(path.join(distPath, "sitemap.xml"), path.join(root, "sitemap.xml"));
   await copyIfExists(path.join(distPath, "CNAME"), path.join(root, "CNAME"));
   await copyIfExists(path.join(distPath, "naijaLogo.jpg"), path.join(root, "naijaLogo.jpg"));
   await copyIfExists(path.join(distPath, "vite.svg"), path.join(root, "vite.svg"));

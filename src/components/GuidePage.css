@@ -1,0 +1,103 @@
+.guide-page {
+  max-width: 920px;
+  margin: 0 auto;
+  color: #1e293b;
+}
+
+.guide-page__lead {
+  font-size: 1.15rem;
+  line-height: 1.7;
+  text-align: center;
+  margin: 0 auto 2.5rem;
+  max-width: 720px;
+  color: #334155;
+}
+
+.guide-page section {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 18px;
+  padding: 1.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.guide-page h2 {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 1rem;
+}
+
+.guide-page h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin: 1.25rem 0 0.5rem;
+}
+
+.guide-page li {
+  margin-bottom: 0.45rem;
+  line-height: 1.6;
+}
+
+.guide-page__steps {
+  counter-reset: step;
+  list-style: none;
+  padding-left: 0;
+}
+
+.guide-page__steps li {
+  counter-increment: step;
+  position: relative;
+  padding-left: 2.6rem;
+  margin-bottom: 1rem;
+}
+
+.guide-page__steps li::before {
+  content: counter(step);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1.9rem;
+  height: 1.9rem;
+  border-radius: 50%;
+  background: #2258c7;
+  color: #ffffff;
+  font-weight: 700;
+  display: grid;
+  place-items: center;
+}
+
+.guide-page__badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.guide-page__note {
+  font-size: 0.95rem;
+  color: #475569;
+  margin-top: 0.75rem;
+}
+
+.guide-page__faq dt {
+  font-weight: 700;
+  margin-top: 1.25rem;
+}
+
+.guide-page__faq dd {
+  margin: 0.4rem 0 0;
+  line-height: 1.65;
+}
+
+.guide-page__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.5rem;
+}
+
+.guide-page a {
+  color: #2258c7;
+  font-weight: 600;
+}

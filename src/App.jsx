@@ -1,6 +1,5 @@
 // import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { useEffect } from 'react';
 
 // Core Components
 import NavbarComponent from './components/NavbarComponent';
@@ -16,30 +15,22 @@ import LegalPage from './components/LegalPage'; // Handles both Policies and Ter
 import DeleteAccount from './components/DeleteAccount';
 import FooterComponent from './components/FooterComponent';
 import VisitorAnalytics from './components/VisitorAnalytics';
+import RouteMeta from './components/RouteMeta';
+import BecomeVendor from './components/BecomeVendor';
+import BecomeRider from './components/BecomeRider';
+import FaqPage from './components/FaqPage';
+import NotFound from './components/NotFound';
 
 // Global Styles
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
 
-useEffect(() => {
-
-  const params = new URLSearchParams(window.location.search);
-
-  const redirect = params.get("redirect");
-
-  if (redirect) {
-    window.history.replaceState(
-      {},
-      "",
-      redirect
-    );
-  }
-
-}, []);
   return (
     <Router>
       <div className="App-Layout">
+
+        <RouteMeta />
 
         {/* Navbar is outside of Routes so it appears on every page */}
         <NavbarComponent />
@@ -76,6 +67,13 @@ useEffect(() => {
 
             {/* 7. Account & Data Deletion Page for Google Play */}
             <Route path="/delete-account" element={<DeleteAccount />} />
+
+            {/* 8. Vendor, rider and FAQ pages */}
+            <Route path="/become-a-vendor" element={<BecomeVendor />} />
+            <Route path="/become-a-rider" element={<BecomeRider />} />
+            <Route path="/faq" element={<FaqPage />} />
+
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </main>
 

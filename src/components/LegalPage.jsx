@@ -2,6 +2,7 @@ import React from "react";
 import { Accordion, Row, Col } from "react-bootstrap";
 import { FaShieldAlt, FaFileContract } from "react-icons/fa";
 import PageContainer from "./PageContainer";
+import { PRIVACY_POLICY_URL } from "../seo/siteMeta";
 import "./LegalPage.css";
 
 const legalContent = {
@@ -60,6 +61,14 @@ const LegalPage = ({ type }) => {
                 {isPolicies
                   ? "These policies explain how NaijaGo protects users, reduces fraud, and supports trust across the platform."
                   : "These terms define how users, vendors, and visitors are expected to use the platform responsibly and fairly."}
+              </p>
+
+              <p>
+                Read the full{" "}
+                <a href={PRIVACY_POLICY_URL} target="_blank" rel="noreferrer">
+                  NaijaGo privacy policy
+                </a>{" "}
+                for the NaijaGo, Go-Vendors and Go-Rider apps.
               </p>
             </div>
 

@@ -3,7 +3,8 @@ import { useLocation } from 'react-router-dom';
 
 const api = import.meta.env.VITE_API_BASE_URL || 'https://naijago-backend.onrender.com';
 const pages = { '/': 'home', '/about': 'about', '/contact': 'contact', '/download': 'download',
-  '/policies': 'policies', '/privacy': 'privacy', '/delete-account': 'delete_account' };
+  '/policies': 'policies', '/privacy': 'privacy', '/delete-account': 'delete_account',
+  '/become-a-vendor': 'become_vendor', '/become-a-rider': 'become_rider', '/faq': 'faq' };
 const consentKey = 'naijago_visitor_consent';
 function readConsent() {
   try { return localStorage.getItem(consentKey); } catch { return null; }
